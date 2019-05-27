@@ -5,22 +5,18 @@ const app = express();
 
 app.get('/', async (req, res) => {
     try {
-        console.log('ohi');
         const browser = await puppeteer.launch({
             headless: true,
             executablePath: '/usr/bin/google-chrome-unstable'
         });
-        console.log('ohi2');
         const page = await browser.newPage();
-        console.log('ohi3');
         await page.setUserAgent("emfluence-puppeteer-seo");
-        console.log('ohi4');
         await page.goto(req.query.url, { waitUntil: 'networkidle0' });
-        console.log('ohi5');
+        if (process.env.auth_user !== '' && process.env.auth_pass !== '') {
+            await page.authenticate({username: process.env.auth_user, password: process.env.auth_pass});
+        }
         const html = await page.content();
-        console.log('ohi6');
         await browser.close();
-        console.log('ohi7');
 
         return res.status(200).send(html);
     }
