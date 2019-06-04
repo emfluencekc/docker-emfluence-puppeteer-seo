@@ -1,0 +1,14 @@
+version: "3.2"
+
+services:
+  chrome:
+    image: browserless/chrome
+
+  prerender:
+    build: ./
+    volumes:
+      - ./index.js:/index.js
+    ports:
+      - 3000:3000
+    cap_add:
+      - SYS_ADMIN

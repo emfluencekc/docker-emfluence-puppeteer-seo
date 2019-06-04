@@ -5,11 +5,8 @@ const app = express();
 
 app.get('/', async (req, res) => {
     try {
-        const browser = await puppeteer.launch({
-            headless: true,
-            executablePath: '/usr/bin/google-chrome-unstable',
-            args: ['--no-sandbox']
-        });
+        console.log(req.query.url);
+        const browser = await puppeteer.connect({ browserWSEndpoint: 'ws://chrome:3000' });
         const page = await browser.newPage();
         await page.setUserAgent("emfluence-puppeteer-seo");
         if (process.env.auth_user && process.env.auth_pass) {
