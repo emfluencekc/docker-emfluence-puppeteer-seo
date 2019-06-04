@@ -6,8 +6,6 @@ services:
 
   prerender:
     build: ./
-    volumes:
-      - ./index.js:/index.js
     ports:
       - 3000:3000
     cap_add:
