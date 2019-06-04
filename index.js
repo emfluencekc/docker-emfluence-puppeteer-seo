@@ -11,6 +11,7 @@ app.get('/', async (req, res) => {
         console.log('New page');
         const page = await browser.newPage();
         await page.setUserAgent("emfluence-puppeteer-seo");
+        console.log('Check for auth', process.env);
         if (process.env.auth_user && process.env.auth_pass) {
             await page.authenticate({username: process.env.auth_user, password: process.env.auth_pass});
         }
