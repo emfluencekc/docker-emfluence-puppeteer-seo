@@ -17,7 +17,7 @@ app.get('/', async (req, res) => {
         const html = await page.content();
         await browser.close();
 
-        console.log('-----End Request-----');
+        console.log('-----End  Request-----');
         return res.status(200).send(html);
     }
     catch (error) {
