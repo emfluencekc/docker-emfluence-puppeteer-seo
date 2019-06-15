@@ -5,8 +5,6 @@ const app = express();
 
 app.get('/', async (req, res) => {
     try {
-        console.log('-----Start Request-----');
-        console.log(req.query.url);
         const browser = await puppeteer.connect({ browserWSEndpoint: 'ws://chrome:3000' });
         const page = await browser.newPage();
         await page.setUserAgent("emfluence-puppeteer-seo");
@@ -17,7 +15,6 @@ app.get('/', async (req, res) => {
         const html = await page.content();
         await browser.close();
 
-        console.log('-----End  Request-----');
         return res.status(200).send(html);
     }
     catch (error) {
