@@ -14,16 +14,15 @@ app.get('/', async (req, res) => {
         }
         await page.goto(req.query.url, { waitUntil: 'networkidle0' });
         const html = await page.content();
-        await browser.close();
-
-        return res.status(200).send(html);
+        
+        res.status(200).send(html);
     }
     catch (error) {
         console.log(error);
-        if (browser) {
-            await browser.close();
-        }
-        return res.status(500).send();
+        res.status(500).send();
+    }
+    finally {
+        await browser.close();
     }
 });
 
