@@ -1,4 +1,6 @@
-FROM node:11.15-slim
+FROM node:12-slim
+
+ENV NEW_RELIC_NO_CONFIG_FILE=true
 
 COPY index.js package.json package-lock.json /
 

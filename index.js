@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require("express");
 const puppeteer = require("puppeteer-core");
 
