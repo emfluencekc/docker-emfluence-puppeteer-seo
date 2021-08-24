@@ -8,8 +8,8 @@
     },
     "dependencies": {
         "express": "^4.16.4",
-        "puppeteer-core": "^1.17.0",
-	"newrelic": "latest"
+        "newrelic": "^8.1.0",
+        "puppeteer-core": "^1.17.0"
     },
     "devDependencies": {},
     "scripts": {
