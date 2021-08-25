@@ -1,0 +1,14 @@
+version: "3.2"
+
+services:
+  prerender:
+    # Volume would only be for local development changes
+    # !!! DELETE FOR PRODUCTION !!!
+    volume:
+      - ./:/app
+    environment:
+      - NEW_RELIC_ENABLED=true
+      - NEW_RELIC_LICENSE_KEY=
+      - NEW_RELIC_APP_NAME=
+      - NEW_RELIC_LOG_ENABLED=false
+      - NEW_RELIC_NO_CONFIG_FILE=true

@@ -9,7 +9,8 @@
     "dependencies": {
         "express": "^4.16.4",
         "newrelic": "^8.1.0",
-        "puppeteer-core": "^1.17.0"
+        "puppeteer-core": "^1.17.0",
+        "url": "^0.11.0"
     },
     "devDependencies": {},
     "scripts": {
