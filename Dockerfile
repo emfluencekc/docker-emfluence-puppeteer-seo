@@ -1,7 +1,7 @@
 FROM node:12-slim
 
 RUN mkdir /app
-COPY index.js package.json package-lock.json /app
+COPY index.js package.json package-lock.json /app/
 
 VOLUME /app
 WORKDIR /app
