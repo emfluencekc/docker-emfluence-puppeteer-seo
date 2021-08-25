@@ -7,6 +7,7 @@ services:
     volume:
       - ./:/app
     environment:
+      - NEW_RELIC_ENABLED=true
       - NEW_RELIC_LICENSE_KEY=
       - NEW_RELIC_APP_NAME=
       - NEW_RELIC_LOG_ENABLED=false
