@@ -40,7 +40,7 @@ app.get('/', async (req, res) => {
             newrelic.addCustomAttribute('URL', req.query.url);
         } catch (ex) {}
 
-        await page.goto(req.query.url, { waitUntil: 'networkidle0' });
+        await page.goto(req.query.url, { waitUntil: 'networkidle2' });
         const html = await page.content();
 
         res.status(200).send(html);
